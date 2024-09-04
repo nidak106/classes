@@ -1,28 +1,11 @@
-# Define a decorator 'make_bold' that adds bold HTML tags to the wrapped function's return value
-def make_bold(fn):
-    def wrapped():
-        return "<b>" + fn() + "</b>"
-    return wrapped
-
-# Define a decorator 'make_italic' that adds italic HTML tags to the wrapped function's return value
-def make_italic(fn):
-    def wrapped():
-        return "<i>" + fn() + "</i>"
-    return wrapped
-
-# Define a decorator 'make_underline' that adds underline HTML tags to the wrapped function's return value
-def make_underline(fn):
-    def wrapped():
-        return "<u>" + fn() + "</u>"
-    return wrapped
-
-# Apply multiple decorators (@make_bold, @make_italic, @make_underline) to the 'hello' function
-@make_bold
-@make_italic
-@make_underline
-def hello():
-    return "hello world"
-
-# Print the result of the decorated 'hello' function, which adds HTML tags for bold, italic, and underline
-
-print(hello()) ## returns "<b><i><u>hello world</u></i></b>"
+import datetime
+now=datetime.datetime.now()
+print(now)
+year=lambda x:x.year
+month=lambda x:x.month
+day=lambda x:x.day
+ti=lambda x:x.time()
+print(f"year is: {year(now)}")
+print(f"month is: {month(now)}")
+print(f"day is: {day(now)}")
+print(f"time is: {ti(now)}")
